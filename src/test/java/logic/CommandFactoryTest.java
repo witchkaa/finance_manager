@@ -72,4 +72,16 @@ public class CommandFactoryTest {
         Command check = new ViewIncomesCommand(user, ui);
         assertEquals(command, check);
     }
+    @Test
+    void create_Command_Test_4() {
+        int input = 4;
+        User user = new User();
+        UserInterface ui = new Console();
+        CommandFactory factory = new CommandFactory(ui, user);
+        ByteArrayOutputStream outputStream = new ByteArrayOutputStream();
+        System.setOut(new PrintStream(outputStream));
+        Command command = factory.createCommand(input);
+        Command check = new AddExpenseCommand(user, ui);
+        assertEquals(command, check);
+    }
 }

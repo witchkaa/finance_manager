@@ -4,6 +4,7 @@ import org.example.storage.User;
 import org.example.ui.UserInterface;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class ViewIncomesCommand implements Command{
     private final User user;
@@ -23,6 +24,18 @@ public class ViewIncomesCommand implements Command{
                     (key, value)
                             -> userInterface.showInfo("\tAmount: " + value + ", comment: " + key + "."));
         }
+    }
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ViewIncomesCommand that = (ViewIncomesCommand) o;
+        return Objects.equals(user, that.user) && Objects.equals(userInterface, that.userInterface);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(user, userInterface);
     }
 
 }

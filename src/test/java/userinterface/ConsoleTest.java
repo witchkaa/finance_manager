@@ -37,7 +37,7 @@ public class ConsoleTest {
         Console console = new Console();
         console.showInfo("This is an info message");
 
-        Assert.assertEquals("This is an info message\r\n", testOut.toString());
+        Assert.assertEquals("This is an info message\n", testOut.toString());
     }
 
 }

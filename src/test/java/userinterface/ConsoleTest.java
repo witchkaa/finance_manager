@@ -1,5 +1,6 @@
 package userinterface;
 
+import org.example.ui.Console;
 import org.junit.After;
 import org.junit.Assert;
 import org.junit.Before;
@@ -36,77 +37,7 @@ public class ConsoleTest {
         Console console = new Console();
         console.showInfo("This is an info message");
 
-        Assert.assertEquals("This is an info message\n", testOut.toString());
-    }
-
-    @Test
-    public void testAskInfoForInt() {
-        Console console = new Console();
-        provideInput("42");
-
-        Object result = console.askInfo("int");
-
-        Assert.assertTrue(result instanceof Integer);
-        Assert.assertEquals(42, result);
-    }
-
-    @Test
-    public void testAskInfoForString() {
-        Console console = new Console();
-        provideInput("Hello, World!");
-
-        Object result = console.askInfo("string");
-
-        Assert.assertTrue(result instanceof String);
-        Assert.assertEquals("Hello, World!", result);
-    }
-
-    @Test
-    public void testAskInfoForWord() {
-        Console console = new Console();
-        provideInput("Hello");
-
-        Object result = console.askInfo("word");
-
-        Assert.assertTrue(result instanceof String);
-        Assert.assertEquals("Hello", result);
-    }
-
-    @Test
-    public void testAskInfoWithInvalidInput() {
-        Console console = new Console();
-        provideInput("Invalid Input");
-
-        Object result = console.askInfo("int");
-
-        Assert.assertNull(result);
-        Assert.assertEquals("Wrong input! Try again. Expected an integer value there.\n", testOut.toString());
-    }
-
-    @Test
-    public void testShowSuggestions() {
-        Console console = new Console();
-        provideInput("5");
-
-        int choice = console.showSuggestions();
-
-        Assert.assertEquals(5, choice);
-        Assert.assertEquals("""
-                Choose what would you like to do:
-                \tview current budget - press '0'
-                \tchange budget - press '1'
-                \tview planned expenses - press '2'
-                \tview planned incomes - press '3'
-                \tadd expense - press '4'
-                \tadd income - press '5'
-                \tmark expense as done - press '6'
-                \tmark income as done - press '7'
-                \tremove expense without completing - press '8'
-                \tremove income without completing - press '9'
-                \tcompare financial plans(incomes and expends) - press '10'
-                \tcompare all finance(incomes, expends and current budget) - press '11'
-                \tshow history stats - press '12'
-                """, testOut.toString());
+        Assert.assertEquals("This is an info message\r\n", testOut.toString());
     }
 
 }

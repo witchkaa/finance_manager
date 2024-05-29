@@ -73,7 +73,7 @@ public class CommandFactoryTest {
         assertEquals(command, check);
     }
     @Test
-    void create_Command_Test_4() {
+    void createCommandTest4() {
         int input = 4;
         User user = new User();
         UserInterface ui = new Console();

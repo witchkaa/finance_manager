@@ -16,9 +16,8 @@ public class FileStorageProcessorTest {
         storageProcessor = new FileStorageProcessor(userInterface);
     }
     @Test
-    public void testSerialize() throws IOException, ClassNotFoundException {
+    public void testSerialize(){
         User user = new User();
-        user.setName("Foo");
         user.setBudget(1000);
         storageProcessor.serialize(user);
         // Verify that the file is created

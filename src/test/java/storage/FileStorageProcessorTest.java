@@ -26,14 +26,12 @@ public class FileStorageProcessorTest {
     @Mock
     private UserInterface ui;
     private FileStorageProcessor storageProcessor;
-    private User user;
     private final String testFilePath = "test.ser";
     private FileStorageProcessor proc;
 
     @Before
     public void setUp() {
         MockitoAnnotations.initMocks(this);
-        user = new User();
         proc = new FileStorageProcessor(ui);
         storageProcessor = new FileStorageProcessor(ui);
     }

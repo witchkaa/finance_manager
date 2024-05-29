@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class Main {
     public static void main(String[] args) {
-        UserInterface ui = new Console();
+        UserInterface ui = new GraphicUI();
         StorageProcessor fileStorageProcessor = new FileStorageProcessor(ui);
         try {
             User user = fileStorageProcessor.getUserInfo();

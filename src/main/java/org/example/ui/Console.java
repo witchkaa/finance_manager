@@ -51,6 +51,13 @@ public class Console implements UserInterface {
                 \tview planned incomes - press '3'
                 \tadd expense - press '4'
                 \tadd income - press '5'
+                \tmark expense as done - press '6'
+                \tmark income as done - press '7'
+                \tremove expense without completing - press '8'
+                \tremove income without completing - press '9'
+                \tcompare financial plans(incomes and expends) - press '10'
+                \tcompare all finance(incomes, expends and current budget) - press '11'
+                \tshow history stats - press '12'
                 """);
         return scan.nextInt();
     }

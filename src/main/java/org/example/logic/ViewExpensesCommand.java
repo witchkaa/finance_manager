@@ -4,6 +4,7 @@ import org.example.storage.User;
 import org.example.ui.UserInterface;
 
 import java.util.Map;
+import java.util.Objects;
 
 public class ViewExpensesCommand implements Command{
     private final User user;
@@ -25,4 +26,16 @@ public class ViewExpensesCommand implements Command{
         }
     }
 
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        ViewExpensesCommand that = (ViewExpensesCommand) o;
+        return Objects.equals(user, that.user) && Objects.equals(userInterface, that.userInterface);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(user, userInterface);
+    }
 }

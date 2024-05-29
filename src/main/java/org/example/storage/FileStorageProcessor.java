@@ -38,8 +38,18 @@ public class FileStorageProcessor implements StorageProcessor{
                  ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream)) {
                 User user = (User) objectInputStream.readObject();
                 this.user = user;
-                return user;
-            } catch (IOException| ClassNotFoundException e) {
+                userInterface.showInfo("Please enter your password: ");
+                String password = (String)userInterface.askInfo("word");
+                if (!(password.equals(user.getPassword()))) {
+                    userInterface.showInfo("Please re-enter your password!");
+                    password = (String) userInterface.askInfo("word");
+                    if (!(password.equals(user.getPassword()))) {
+                        userInterface.showInfo("Wrong password again! Restart the program and try again.");
+                        System.exit(0);
+                    }
+                    return user;
+                }
+            } catch (IOException | ClassNotFoundException e) {
                 throw new StorageRuntimeException("Couldn't read the file...");
             }
         }
@@ -50,10 +60,12 @@ public class FileStorageProcessor implements StorageProcessor{
         userInterface.showInfo("Seems like you're new to our app! Let's create a user!\n" +
                 "Please enter your first name: ");
         String name = (String)userInterface.askInfo("word");
-        user.setName(name);
         userInterface.showInfo("Nice to meet you, " + name + "! Now enter your start budget: ");
         Integer budget = (Integer) userInterface.askInfo("int");
+        userInterface.showInfo("Please enter a password for your new account: ");
+        String password = (String)userInterface.askInfo("word");
         user.setBudget(budget);
+        user.setPassword(password);
         user.setExpends(new HashMap<>());
         user.setIncomes(new HashMap<>());
         user.setHistory(new ArrayList<>());

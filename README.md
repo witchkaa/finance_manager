@@ -20,7 +20,7 @@ because currently our app is desktop-only and there's no connection to any kind 
 
 - compare plans: see stats based off your planned expenses + incomes
 
-- mark expense/income done: delete it from the planed list and change your budget according to it being done
+- mark expense/income done: delete it from the planned list and change your budget accorsing to it being done
 
 - remove expense/income: delete it without budget changes
 
@@ -51,6 +51,15 @@ Next, in the menu, select Build - Build Artifacts - Build.
 In the project structure, a directory named "out" will appear, containing the JAR file. 
 You can now copy this file to any desired directory on your computer.
 
+# How to run tests
+
+While in root directory of the project, write:
+
+```
+mvn test
+```
+
+Or you can run tests using interface of your IDE.
 
 # Conclusion 
 

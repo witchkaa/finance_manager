@@ -30,7 +30,7 @@ public class CommandFactory {
             case 12 -> command = new ShowHistoryStatsCommand(user, userInterface);
             default -> {
                 command = null;
-                System.out.println("No such command! Type a number 0-5: ");
+                System.out.println("No such command! Type a number 0-12: ");
                 Scanner scan = new Scanner(System.in);
                 int type2 = scan.nextInt();
                 scan.close();

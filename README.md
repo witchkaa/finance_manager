@@ -34,9 +34,12 @@ Before downloading the app, you need Java installed on your machine.
 
 ### First option: using the JAR from this repo
 
-[finance-manager.jar](finance-manager.jar)
+[Console UI JAR](finance-manager.jar)
 
-After installing the JAR, cd to the directory you installed it in and use _java -jar finance-manager.jar_
+[Graphic UI JAR](finance-manager-graphic.jar)
+
+After installing the JAR, cd to the directory you installed it in and use _java -jar finance-manager.jar_ or _java 
+-jar finance-manager-graphic.jar_
 
 ### Second option: manual JAR build (Intellij IDEA program interface)
 
